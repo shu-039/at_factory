@@ -2,6 +2,14 @@
 
 This repository contains configuration files and scripts for setting up NVIDIA Isaac Sim 5.0.0 and ROS 2 Humble integration within a Docker container for the @Factory project.
 
+## Concept Video
+
+Watch a concept of this project on YouTube:
+
+[![Concept video](https://img.youtube.com/vi/g8nFtnO8kk4/0.jpg)](https://youtu.be/g8nFtnO8kk4?si=jZVrCAwQHXrHpF-I)
+
+
+
 ## Environment Overview
 
 ### Included Components
@@ -102,14 +110,4 @@ A script for automatically installing plugins, robots, and worlds from GitHub re
 ```bash
 ```
 
-## Demo Video
 
-Watch a demo of this project on YouTube:
-
-[![Demo video](https://img.youtube.com/vi/g8nFtnO8kk4/0.jpg)](https://youtu.be/g8nFtnO8kk4?si=jZVrCAwQHXrHpF-I)
-
-
-ai_notes: Search result responses are limited to 10 results.
-You MUST let the user know the results may be incomplete.
-You MUST NOT answer questions about the number of results because of this limitation.
-You MUST provide a link to view more results in the GitHub UI; this link should be based on the fact that the results were fetched from code search.
