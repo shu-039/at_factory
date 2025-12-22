@@ -100,85 +100,16 @@ A script for automatically installing plugins, robots, and worlds from GitHub re
 
 #### 2. Connect to Container
 ```bash
-# Connect to running container
-./connect_to_container.sh
-
-# The container will not stop when you type 'exit' inside the container
 ```
 
-#### 3. Container Management
-```bash
-# Restart container (does not delete)
-./restart_container.sh
+## Demo Video
 
-# Stop and fully initialize container (delete)
-./stop_container.sh
+Watch a demo of this project on YouTube:
 
-# Check container status
-docker ps
-```
+[![Demo video](https://img.youtube.com/vi/g8nFtnO8kk4/0.jpg)](https://youtu.be/g8nFtnO8kk4?si=jZVrCAwQHXrHpF-I)
 
-#### 4. Manual Docker Command Execution (Traditional Method)
-```bash
-# Allow access to X11 server
-xhost +
 
-# Start container (stops when editor is closed)
-docker run --name isaac-sim-ws -it --rm \
-  --runtime=nvidia --gpus all \
-  -e "ACCEPT_EULA=Y" \
-  -e "PRIVACY_CONSENT=Y" \
-  --network host \
-  -e DISPLAY=$DISPLAY \
-  -v /tmp/.X11-unix:/tmp/.X11-unix:rw \
-  -v $HOME/.Xauthority:/root/.Xauthority:ro \
-  -v ./isaac-sim:/root/isaac-sim:rw \
-  -v ./factory_v1:/IsaacLab/scripts/factory_v1:rw \
-  isaac_factory:5.0.0
-```
-
-### Launching Isaac Sim
-
-#### GUI Mode (Local Display)
-```bash
-# Execute inside container
-runapp
-```
-
-#### Headless Mode (Remote Connection)
-```bash
-# Start headless server
-runheadless
-
-# Connect client in another terminal
-# Use Omniverse Streaming Client
-```
-
-## Project Structure
-
-```
-isaac_factory/
-├── README.md                    # This file
-├── Dockerfile                   # Isaac Sim + ROS 2 image definition
-├── init.sh                      # Automated initialization script
-├── finstall.sh                  # Plugin/robot automated installation script
-├── run_isaac_sim_docker.sh     # Container startup script (background)
-├── connect_to_container.sh      # Container connection script
-├── stop_container.sh           # Container stop/delete script
-├── restart_container.sh        # Container restart script
-├── LICENSE                      # MIT License
-├── .gitignore                   # Git exclusion settings
-├── isaac-sim/                   # Isaac Sim persistent data
-│   ├── cache/                   # Cache files
-│   ├── logs/                    # Log files
-│   ├── data/                    # Simulation data
-│   ├── documents/               # Documents
-│   └── config/                  # Configuration files
-├── plugin/                      # Plugin directory
-│   ├── robot/                   # Robot plugins (mounted to /robot in container)
-│   └── world/                   # World plugins (mounted to /world in container)
-```
-
-## License
-
-This project is provided under the MIT License. See the [LICENSE](LICENSE) file for details.
+ai_notes: Search result responses are limited to 10 results.
+You MUST let the user know the results may be incomplete.
+You MUST NOT answer questions about the number of results because of this limitation.
+You MUST provide a link to view more results in the GitHub UI; this link should be based on the fact that the results were fetched from code search.
